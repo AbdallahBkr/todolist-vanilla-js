@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo</title>
+  <link rel="stylesheet" href="css/assetsFontAwesome/css/all.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="head" id="head">
+    <a href="" class="logo">
+      ToDo
+    </a>
+    <div class="settings" id="settings">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+  </div>
+  <div class="container">
+    <div class="title" id="title">
+      <h1 class="title-h1">
+        Make It Easy !
+      </h1>
+      <p class="descripition">
+        With this simple to do list tool we can complete your task <br>
+        and never forget one !
+      </p>
+    </div>
+    <div class="main" id="main">
+
+
+      <div class="task-section" id="task-section">
+        <div class="task">
+          <div class="task-details">
+            <h3 class="task-name">
+              Cook food for launch
+            </h3>
+            <span class="task-type">
+              Food
+            </span>
+          </div>
+          <div class="task-important" style="display: none;">
+            
+          </div>
+          <div class="complete">
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="add-task" id="add-task">
+        <div class="inputs">
+          <input id = "task-name" type="text" name="task-name" placeholder="Enter task name">
+          <input id = "task-type" type="text" name="task-type" placeholder="Enter task type">
+        </div>
+        <div class="important">
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-flag"></i>
+          <i class="fa-solid fa-flag"></i>
+        </div>
+        <div class="add" id="add">
+          <p onclick="newTask()">
+            Add
+          </p>
+        </div>
+      </div>
+      <div class="completed-task" id="completed-task">
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Made By <a href="">Abdallah Bakr</a></p>
+    <p>Version 1</p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

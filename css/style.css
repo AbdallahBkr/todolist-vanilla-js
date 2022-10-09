@@ -1,0 +1,220 @@
+:root{
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0%;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+.head{
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.container{
+    height: 90vh;
+    background-image: url(../images/Untitled-2.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.title{
+    text-align: center;
+}
+.title .title-h1{
+    margin: 0;
+    padding: 10px 0 20px;
+}
+.title .descripition{
+    font-weight: 600;
+}
+.main .task-section{
+    grid-area: task-section;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.main .add-task{
+    grid-area: add-task;
+    border: 1px solid black;
+    border-top-right-radius: 6px;
+}
+.main .completed-task{
+    grid-area: completed-task;
+    border-bottom-right-radius: 6px;
+}
+.main{
+    background-color: white;
+    border-radius: 12px;
+    width: 75%;
+    height: 60vh;
+    margin: auto;
+    margin-top: 60px;
+    padding: 25px;
+    display: grid;
+    grid-template-areas: 
+    "task-section add-task"
+    "task-section completed-task"
+    ;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 30% 70%;
+}
+
+.main .add-task .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-area: inputs;
+}
+.main .add-task .inputs input{
+    padding: 4px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 90%;
+}
+.main .add-task .important{
+    display: flex;
+    grid-area: important;
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+}
+.main .add-task .important i{
+    color: #e2e2e2;
+    font-size: 20px;
+}
+.main .add-task .add{
+    grid-area: add-task;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+.main .add-task .add p{
+    background-color: red;
+    width: fit-content;
+    margin: auto;
+    padding: 4px 8px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+.main .add-task{
+    padding: 20px;
+    display: grid;
+    grid-template-areas: 
+    "inputs important"
+    "inputs add-task"
+    ;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 50% 50%;
+    align-items: center;
+}
+
+
+.task-section{
+    padding: 20px;
+    max-height: 100%;
+    overflow: auto;
+}
+.task-section .task{
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    border: 2px solid #e2e2e2;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "task-details complete"
+    ;
+    align-items: center;
+    justify-items: center;
+}
+.task-section .task .task-details{
+    width: 100%;
+    grid-area: task-details;
+}
+.task-section .task .task-details .task-name{
+    font-size: 18px;
+    font-weight: 600;
+}
+.task-section .task .task-details .task-type{
+    color: rgba(143, 143, 143, 0.933);
+    font-size: 14px;
+    font-weight: 600;
+}
+.task-section .task .complete{
+    grid-area: complete;
+    background-color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    position: relative;
+    border: 2.5px solid black;
+}
+.task-section .task .complete::before{
+    content: "";
+    position: absolute;
+    top: calc(50% - 0.2px);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 16px;
+    width: 16px;
+    background-color: blue;
+    border-radius: 50%;
+}
+.task-section .task .important{
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .main{
+        grid-template-areas:
+            " add-task"
+            "task-section ";
+        grid-template-columns: 1fr;
+        grid-template-rows: 40% 60%;
+    }
+    .task-section{
+        padding: 0;
+    }
+    .main .add-task{
+        padding: 4px;
+        grid-template-areas:
+            "inputs inputs"
+            "important add-task";
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        justify-items: center;
+        border: none;
+    }
+    .main .add-task .inputs input{
+        width: 100%;
+    }
+}
